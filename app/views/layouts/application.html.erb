@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TheTea</title>
+    <title><%= yield(:title) %> </title>
+    <%= favicon_link_tag asset_path('logo.png'), :rel => 'icon', :type => 'image/png' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +11,30 @@
   </head>
 
   <body>
+    <div id="header">
+      <center><%= image_tag "icon.jpg", alt: "logo", height: "50", width: "150"%></center>
+    </div>
+    <div id="nav">
+      <ul>
+        <li class="first"><%= link_to "Home", controller: "say", action: "home", class: "lin"%></li>
+        <li><%= link_to "Videos", controller: "say", action: "video", class: "lin" %></li>
+        <li><%= link_to "Fashion", controller: "say", action: "fashion", class: "lin" %></li>
+        <li class="last"><%= link_to "Recommend", controller: "say", action: "recommend", class: "lin" %></li>
+      </ul>
+    </div>
+    
+    
+    
+    
     <%= yield %>
+    <br />
+    <br />
+    <p class="footer">Site developed by theTea
+    <br />
+    <%= link_to "Back", :back %>
+    <br />
+    <br />
+    <br />
+    </p>
   </body>
 </html>

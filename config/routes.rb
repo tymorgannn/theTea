@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'say/home'
+  root 'say#home'
   get 'say/video'
   get 'say/fashion'
   get 'say/recommend'
